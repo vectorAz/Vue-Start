@@ -11,7 +11,7 @@
       background: blue;
     }
     .classC {
-      font-size: 20px;
+      font-size: 50px;
     }
   </style>
 </head>
@@ -31,15 +31,29 @@
 -->
 
 <div id="demo">
-  <h2>1. class绑定: :class='xxx'</h2>
+  <h2 :style='{color:mycolor} ' :class='myclassb'>1. class绑定: :class='xxx'</h2>
 
-  <h2>2. style绑定</h2>
-
+  <h2 :class='{classC:hasC,classB:haisB}'>2. style绑定</h2>
+  <button @click='btclick'>切换</button>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
-
+new Vue({
+  el:'#demo',
+  data:{
+    mycolor:'red',
+    myclassb:'classB',
+    hasC:true,
+    haisB:true
+  },
+  methods:{
+    btclick(){
+      this.hasC=!this.hasC,
+      this.haisB=!this.haisB
+    }
+  }
+})
 </script>
 </body>
 </html>

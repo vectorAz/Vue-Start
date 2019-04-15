@@ -15,10 +15,29 @@
 -->
 
 <div id="demo">
+  <span v-if="show">true</span>
+  <span v-else>fales</span> <br />
+
+  <span v-show="show">true</span>
+  <span v-show="!show">fales</span>
+  <button @click='btonclick'>切换</button>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+    el:'#demo',
+    data:{
+      show:true
+      
+    },
+    methods:{
+      btonclick(){
+        this.show=!this.show
+      }
+    }
+  })
+
 </script>
 </body>
 </html>
