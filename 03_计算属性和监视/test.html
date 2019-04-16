@@ -36,7 +36,7 @@
       },
       computed: {
         Fullname2() {
-          console.log('computed');
+          // console.log('computed');
           return this.firstname + '-' + this.lastname
         },
         Fullname3:{
@@ -47,8 +47,8 @@
           set(val) {
             console.log(val);
             
-            const name = val.split('-')
-            console.log(name);
+            const name = val.split('-') 
+            // console.log(name);
             
             this.firstname = name[0]
             this.lastname = name[1]
@@ -57,7 +57,7 @@
       },
       watch: {
         lastname(val){
-          console.log('watch');
+          // console.log('watch');
           
           this.Fullname1=this.firstname+'-'+val
         },

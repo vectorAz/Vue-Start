@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>10_过渡&动画1</title>
 </head>
+<style>
+  .xxx-leave-active  {
+    transition: all 5s;
+  }
+
+  .xxx-enter-active{
+    transition: all 5s;
+
+  }
+  .xxx-enter , .xxx-leave-to {
+    opacity: 0;
+    transform: translateX(20px)
+  }
+
+</style>
+
 <body>
-<!--
+  <!--
 1. vue动画的理解
   操作css的trasition或animation
   vue会给目标元素添加/移除特定的class
@@ -19,11 +36,26 @@
   xxx-leave-active: 指定隐藏的transition
   xxx-enter: 指定隐藏时的样式
 -->
+  <div id="root">
+    <button @click= 'show=!show'>
+      XXXXXXXX
+    </button>
+    <transition name='xxx'>
+      <div v-show="show">11111xxxxxxxxxxx</div>
+    </transition>
+  </div>
 
+
+
+</body>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
-
+  new Vue({
+    el: '#root',
+    data: {
+      show: true
+    },
+  })
 </script>
-</body>
 </html>

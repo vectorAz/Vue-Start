@@ -3,13 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>10_过渡&动画2</title>
-
+  <style>
+  .tion-enter-active{
+    animation: actives 1s linear
+  }
+  .tion-leave-active{
+    animation: actives 1s linear
+  }
+  
+  @keyframes actives{
+    0%{
+      transform: scale(0)
+    }
+    50%{
+      transform: scale(2)
+    }
+    100%{
+      transform: scale(1)
+    }
+  }
+  </style>
 </head>
 <body>
+    <div id="root">
+      <button @click='isshow=!isshow'>切换</button>
+
+      <transition name='tion'>
+      <p v-if="isshow" style="display: inline-block">11111111111111</p>
+      </transition>
+    </div>
+</body>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script>
-
+  new Vue({
+    el:'#root',
+    data:{
+      isshow:true
+    },
+  })
 </script>
-</body>
 </html>

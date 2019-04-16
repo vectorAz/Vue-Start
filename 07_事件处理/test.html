@@ -23,8 +23,15 @@
 <div id="example">
 
   <h2>1. 绑定监听</h2>
+  <div style="width:200px ;height:200px ; background-color:red" @click='wrapcl'>
+    
+    <div  style="width:100px ;height:100px ; background-color:blue" @click.stop='inner'></div>
+  </div>
+
 
   <h2>2. 事件修饰符</h2>
+  
+
 
   <h2>3. 按键修饰符</h2>
 
@@ -32,7 +39,21 @@
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+    el:'#example',
+    data:{
+    },
+    methods:{
+      inner(){
+        console.log('1');
+        
+      },
+        wrapcl(){
+          console.log('2');
 
+      }
+    }
+  })
 </script>
 </body>
 </html>

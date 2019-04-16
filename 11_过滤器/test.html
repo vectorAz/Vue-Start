@@ -22,11 +22,26 @@
 <!--需求: 对当前时间进行指定格式显示-->
 <div id="test">
   <h2>显示格式化的日期时间</h2>
+  <p>{{time | timeformat}}</p>
+  <p>{{time | timeformat('YYYY-MM-DD') }}</p>
+  <p>{{time | timeformat(' HH:mm:ss') }}</p>
+  <p>{{time}}</p>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.js"></script>
 <script>
+      Vue.filter('timeformat',function(value,formatStr){
+        return moment(value).format(formatStr,'YYYY-MM-DD HH:mm:ss')
+      })
 
+    new Vue({
+      el:'#test',
+      data:{
+        time:Date.now()
+
+      },
+    })
 </script>
 </body>
 </html>

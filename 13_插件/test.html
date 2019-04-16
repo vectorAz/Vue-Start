@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>17_插件</title>
 </head>
+
 <body>
+  <div id="root">
+    <span v-my-directive='msg'></span>
+  </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script src="./vue-myplugin.js"></script>
+  <script type="text/javascript">
+    Vue.use(myplugin)
+    Vue.logmethod()
+    const vm = new Vue({
+      el: '#root',
+      data: {
+        msg: 'abcd'
+      },
+    })
+    vm.$myplugin() //加了$的表示是vm实例身上的方法
+  </script>
 
-</script>
 </body>
+
 </html>
